@@ -1,0 +1,62 @@
+﻿@model List<SecondMVCapp.Models.Employee>
+<h4>
+    @{
+        ViewBag.Title = "Employee List";
+}
+</h4>
+<h2>@ViewData["PageTitle"]</h2>
+<hr/>
+<h3>@ViewData["PageSubTitle"]</h3>
+
+
+<table class="table table-hover table-striped table-primary">
+    <thead>
+        <tr>
+            <th>empId</th>
+            <th>empName</th>
+            <th>address</th>
+            <th>phone</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.empId</td>
+                <td>@employee.empName</td>
+                <td>@employee.address</td>
+                <td>@employee.phone</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<hr/>
+<table class="table table-hover table-striped table-primary">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Product</th>
+            <th>Company</th>
+            <th>Shipping Date</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in @ViewData["Product"] as List<SecondMVCapp.Models.Product>)
+            {
+                <tr>
+                    <td>@product.prodId</td>
+                    <td>@product.propName</td>
+                    <td>@product.prodCompany</td>
+                    <td>@product.shippingDate</td>
+                    <td>@product.address</td>
+                </tr>
+            }
+       
+    </tbody>
+
+</table>
+
